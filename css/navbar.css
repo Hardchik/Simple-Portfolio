@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  height: 10vh;
+  background: #34495e;
+  z-index: 100;
+}
+
+.nav-links {
+  /* display: flex; */
+  list-style: none;
+  width: 50%;
+  height: 100%;
+  /* justify-content: space-around; */
+  /* align-items:; */
+  margin-left: auto;
+}
+
+.nav-links {
+  float: right !important; 
+  margin-right: 40px;
+  text-align: right;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin: 0 8px;
+  font-size: 16px;
+}
+
+.nav-links li a{
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  align-content: right;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  padding: 7px 10px;
+}
+
+.nav-links li a.active, .nav-links li a:hover {
+  border-bottom: 1px solid white;
+  transition: .5s;
+}
+
+.logo a{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0 100px;
+}
+
+.float{
+  line-height: 90px;
+  display: flex;
+}
+
+.landing {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing h1 {
+  margin: 100px;
+  font-size: 50px;
+  color: #ae5fce;
+}
+
+@media screen and (max-width: 1200px) {
+  .line {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 5px;
+  }
+  nav {
+    position: relative;
+  }
+
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+  }
+
+  .nav-links {
+    position: fixed;
+    background: #34495e;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+    text-align: center;
+  }
+  .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+  }
+  .landing {
+    flex-direction: column;
+  }
+  .nav-links li {
+    margin-top: 50px;
+    display: block;
+    opacity: 0;
+  }
+  .nav-links li a {
+    font-size: 25px;
+  }
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+  li.fade {
+    opacity: 1;
+  }
+}
