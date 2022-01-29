@@ -4,14 +4,21 @@
 
 .home {
     padding: 100px;
+    justify-content: space-around;
 }
-
+.content{
+  display: flex;
+  align-items: center;
+}
 .home-heading{
     /* width: 100vw;
     height: 100vh; */
     /* background: #000011; */
     display: grid;
     /* place-items: center; */
+}
+.home-detail {
+  margin-right: 10vw;
 }
 .home-heading h1{
     color: transparent;
@@ -26,6 +33,7 @@
 }
 .button1{
     position: relative;
+    border: solid cornflowerblue;
     z-index: 6;
     font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.5);
@@ -34,8 +42,13 @@
     padding: 1rem;
     margin-top: 40px;
 }
+.button1 a{
+  text-decoration: none;
+  color: white;
+}
 .button2{
   position: relative;
+  border: solid cornflowerblue;
   z-index: 6;
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.5);
@@ -44,6 +57,18 @@
   padding: 1rem;
   margin-top: 40px;
   margin-left: 40px;
+}
+.button2 a{
+  text-decoration: none;
+  color: white;
+}
+.button1:hover {
+  border: solid cornflowerblue;
+  background-color: transparent;
+}
+.button2:hover {
+  border: solid cornflowerblue;
+  background-color: transparent;
 }
 .home-heading h1::before{
     position: absolute;
@@ -104,6 +129,13 @@
 
   .home-img {
     position: relative;
+    z-index: 6;
+    align-content:flex-end;
+    align-items: flex-end;
+    /* margin-left: 500px; */
+    justify-self: center;
+    justify-content: center;
+    justify-items: end;
   }
 
 .waves {
@@ -147,5 +179,14 @@
     
     100% {
       transform: translate(-50%, -75%) rotate(360deg);
+    }
+  }
+
+  @media screen and (max-width: 1450px) {
+    .content {
+      display: block;
+    }
+    .home-img {
+      display: none;
     }
   }
